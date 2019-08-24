@@ -5,6 +5,10 @@ VisualStudioVersion = 15.0.28307.271
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FightsContest.Application", "FightsContest.Application\FightsContest.Application.csproj", "{AAAB55FD-6EE8-43F6-82C4-0E46FF2A2BF5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FightsContest.Domain", "FightsContest.Domain\FightsContest.Domain.csproj", "{A70625FD-CB7B-4ED0-A9BB-04ADDE2114B3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FightsContest.Infrastucture", "FightsContest.Infrastucture\FightsContest.Infrastucture.csproj", "{FE11B333-5C47-4F16-B318-ABDB732E4656}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{AAAB55FD-6EE8-43F6-82C4-0E46FF2A2BF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AAAB55FD-6EE8-43F6-82C4-0E46FF2A2BF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AAAB55FD-6EE8-43F6-82C4-0E46FF2A2BF5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A70625FD-CB7B-4ED0-A9BB-04ADDE2114B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A70625FD-CB7B-4ED0-A9BB-04ADDE2114B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A70625FD-CB7B-4ED0-A9BB-04ADDE2114B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A70625FD-CB7B-4ED0-A9BB-04ADDE2114B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE11B333-5C47-4F16-B318-ABDB732E4656}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE11B333-5C47-4F16-B318-ABDB732E4656}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE11B333-5C47-4F16-B318-ABDB732E4656}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE11B333-5C47-4F16-B318-ABDB732E4656}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
