@@ -16,9 +16,12 @@ namespace FightsContest.Application.Controllers
 
         public IActionResult Index()
         {
-            List<Fighter> fighters = _fightersRepository.Get();
-
-            return View();
+            Contest contest = new Contest()
+            {
+                Fighters = _fightersRepository.Get()
+            };
+            
+            return View(contest);
         }
 
         public IActionResult Privacy()
