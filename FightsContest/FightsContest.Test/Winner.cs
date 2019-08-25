@@ -13,13 +13,14 @@ namespace FightsContest.Test
 
         public Winner()
         {
-            _ruleContest  = new RulesContest();
+            _ruleContest = new RulesContest();
         }
 
         [TestMethod]
         public void WinnerByFights()
         {
-            Fighter fighter = new Fighter() {
+            Fighter fighter = new Fighter()
+            {
                 Age = 20,
                 Fights = 2,
                 Loses = 1,
@@ -46,11 +47,10 @@ namespace FightsContest.Test
                 Wins = 2,
             };
 
-            Fighter winner = _ruleContest.Winner(fighter, challenger);
+            Fight fight = _ruleContest.Winner(fighter, challenger);
 
-            Assert.AreEqual(winner, challenger);
-            Assert.AreEqual(winner.Name, "Lutador 2");
-
+            Assert.AreEqual(fight.Loser, 1);
+            Assert.AreEqual(fight.Winner, 2);
         }
 
         [TestMethod]
@@ -83,10 +83,11 @@ namespace FightsContest.Test
                 Wins = 1,
             };
 
-            Fighter winner = _ruleContest.Winner(fighter, challenger);
+            Fight fight = _ruleContest.Winner(fighter, challenger);
 
-            Assert.AreEqual(winner, fighter);
-            Assert.AreEqual(winner.Name, "Lutador 1");
+            Assert.AreEqual(fight.Winner, 1);
+            Assert.AreEqual(fight.Loser, 2);
+
         }
 
         [TestMethod]
@@ -120,10 +121,10 @@ namespace FightsContest.Test
                 Wins = 1,
             };
 
-            Fighter winner = _ruleContest.Winner(fighter, challenger);
+            Fight fight = _ruleContest.Winner(fighter, challenger);
 
-            Assert.AreEqual(winner, fighter);
-            Assert.AreEqual(winner.Name, "Lutador 1");
+            Assert.AreEqual(fight.Loser, 2);
+            Assert.AreEqual(fight.Winner, 1);
         }
     }
 }

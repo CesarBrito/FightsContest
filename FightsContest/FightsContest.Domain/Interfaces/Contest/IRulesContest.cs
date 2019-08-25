@@ -8,7 +8,9 @@ namespace FightsContest.Domain.Interfaces.Contest
     public interface IRulesContest
     {
         string StartValidation(List<Fighter> fighters, List<int> checkedFighters);
-        Fighter Winner(Fighter fighter, Fighter challenger);
-
+        List<Fighter> Contest(List<Fighter> fighters, List<int> checkedFighters);
+        Fight Winner(Fighter fighter, Fighter challenger);
+        IEnumerable<List<Fighter>> Groups(List<Fighter> fighters, List<int> checkedFighters);
+        IEnumerable<Ranking> GroupRanking(List<Fighter> fighters);
     }
 }

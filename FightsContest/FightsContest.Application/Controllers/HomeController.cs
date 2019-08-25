@@ -23,7 +23,7 @@ namespace FightsContest.Application.Controllers
             {
                 Fighters = _fighters
             };
-            
+
             return View(contest);
         }
 
@@ -37,6 +37,11 @@ namespace FightsContest.Application.Controllers
             if (!string.IsNullOrEmpty(startValidation))
             {
                 contest.ErrorMessage = startValidation;
+            }
+            else
+            {
+                List<Fighter> winners = _rules.Contest(contest.Fighters, contest.CheckBoxFighters);
+
             }
 
             return View("Index", contest);
