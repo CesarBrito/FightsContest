@@ -11,6 +11,8 @@ namespace FightsContest.Domain.Interfaces.Contest
 
         List<Fighter> Contest(List<Fighter> fighters, List<int> checkedFighters);
 
+        List<List<Fighter>> QuarterFinals(List<Fighter> fighters, List<List<Ranking>> rankings);
+
         Fight Winner(Fighter fighter, Fighter challenger);
 
         List<List<Fighter>> Groups(List<Fighter> fighters, List<int> checkedFighters);
