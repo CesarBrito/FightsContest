@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using FightsContest.Domain.Interfaces.Contest;
 using FightsContest.Domain.Interfaces.Repository;
+using FightsContest.Domain.Service.Contest;
 using FightsContest.Domain.Service.Repository;
 using FightsContest.Infrastucture.Repository;
 using Flurl.Http.Configuration;
@@ -41,6 +43,7 @@ namespace FightsContest.Application
             services.AddSingleton<IFlurlClientFactory, PerBaseUrlFlurlClientFactory>();
             services.AddSingleton<IFightersConfig, FightersConfig>();
             services.AddSingleton<IFightersRepository, FightersRepository>();
+            services.AddSingleton<IRulesContest, RulesContest>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

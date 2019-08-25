@@ -1,29 +1,61 @@
-﻿@model FightsContest.Domain.Entities.Contest
-@using FightsContest.Domain.Entities;
+﻿@model FightsContest.Domain.Entities.Model.Contest
+@using FightsContest.Domain.Entities.Model;
 @{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Inicio";
+}
+<div class="row">
+    <div class="col-12 mb-4">
+        <div class="text-center">
+            <h1 class="display-4">Torneio de Lutas</h1>
+            <p>
+                Selecione <span>20</span> lutadores para iniciar o torneio.
+            </p>
+        </div>
+    </div>
+
+</div>
+
+@if (!string.IsNullOrEmpty(Model.ErrorMessage))
+{
+    <div class="alert alert-danger text-center" role="alert">
+        @Model.ErrorMessage
+    </div>
 }
 
-<div class="text-center">
-    <h1 class="display-4">Torneio de Lutas</h1>
-</div>
-
-
-<div class="row">
-    @foreach (Fighter fighter in Model.Fighters)
-    {
-        <div class="col-3 mb-3">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">@fighter.Name</h5>
-                    <p><b>Idade:</b> @fighter.Age</p>
-                    <p><b>Lutas:</b> @fighter.Fights</p>
-                    <p><b>Derrotas:</b> @fighter.Loses</p>
-                    <p><b>Vitórias:</b> @fighter.Wins</p>
-                    <p><b>Artes Marciais:</b> @fighter.MartialArts.Count()</p>
-                    @*<a href="#" class="btn btn-primary">Go somewhere</a>*@
+@using (Html.BeginForm("Contest", "Home", FormMethod.Post))
+{
+    <div class="row">
+        <div class="col-12 mb-3">
+            <button type="submit" class="btn btn-primary">Iniciar</button>
+        </div>
+    </div>
+    <div class="row">
+        @{ int index = 0;}
+        @foreach (Fighter fighter in Model.Fighters)
+        {
+            <div class="col-3 mb-3">
+                <div class="card">
+                    <div class="card-title">
+                        <div class="custom-control custom-checkbox mr-sm-2">
+                            @Html.CheckBox($"CheckBoxFighters[]", fighter.Selected, new { @class = "custom-control-input", id = fighter.Id.ToString(), value = fighter.Id.ToString() })
+                            @Html.Label(fighter.Id.ToString(), fighter.Name, new { @class = "custom-control-label", @for = fighter.Id.ToString() })
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <p><b>Idade:</b> @fighter.Age</p>
+                        <p><b>Lutas:</b> @fighter.Fights</p>
+                        <p><b>Derrotas:</b> @fighter.Loses</p>
+                        <p><b>Vitórias:</b> @fighter.Wins</p>
+                        <p><b>Artes Marciais:</b> @fighter.MartialArts.Count()</p>
+                    </div>
                 </div>
             </div>
+            index++;
+        }
+    </div>
+    <div class="row">
+        <div class="col-12 mb-3">
+            <button type="submit" class="btn btn-primary">Iniciar</button>
         </div>
-    }
-</div>
+    </div>
+}

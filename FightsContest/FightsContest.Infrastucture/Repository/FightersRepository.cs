@@ -1,4 +1,4 @@
-﻿using FightsContest.Domain.Entities;
+﻿using FightsContest.Domain.Entities.Model;
 using FightsContest.Domain.Interfaces.Repository;
 using Flurl.Http.Configuration;
 using System;

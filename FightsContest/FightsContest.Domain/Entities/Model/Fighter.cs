@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace FightsContest.Domain.Entities
+namespace FightsContest.Domain.Entities.Model
 {
     public class Fighter
     {
@@ -12,14 +12,15 @@ namespace FightsContest.Domain.Entities
         [JsonProperty(PropertyName = "nome")]
         public string Name { get; set; }
         [JsonProperty(PropertyName = "idade")]
-        public int Age { get; set; }
+        public decimal Age { get; set; }
         [JsonProperty(PropertyName = "artesMarciais")]
         public List<string> MartialArts { get; set; }
         [JsonProperty(PropertyName = "lutas")]
-        public int Fights{ get; set; }
+        public decimal Fights { get; set; }
         [JsonProperty(PropertyName = "derrotas")]
-        public int Loses { get; set; }
+        public decimal Loses { get; set; }
         [JsonProperty(PropertyName = "vitorias")]
-        public int Wins { get; set; }
+        public decimal Wins { get; set; }
+        public bool Selected { get; set; }
     }
 }

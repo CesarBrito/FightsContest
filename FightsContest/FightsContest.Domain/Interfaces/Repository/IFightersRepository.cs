@@ -1,7 +1,5 @@
-﻿using FightsContest.Domain.Entities;
-using System;
+﻿using FightsContest.Domain.Entities.Model;
 using System.Collections.Generic;
-using System.Text;
 
 namespace FightsContest.Domain.Interfaces.Repository
 {

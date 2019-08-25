@@ -1,4 +1,5 @@
-﻿using FightsContest.Domain.Entities;
+﻿using FightsContest.Domain.Entities.Model;
+using FightsContest.Domain.Interfaces.Contest;
 using FightsContest.Domain.Interfaces.Repository;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
@@ -7,26 +8,38 @@ namespace FightsContest.Application.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly IFightersRepository _fightersRepository;
+        private readonly List<Fighter> _fighters;
+        private readonly IRulesContest _rules;
 
-        public HomeController(IFightersRepository fightersRepository)
+        public HomeController(IFightersRepository fightersRepository, IRulesContest rules)
         {
-            _fightersRepository = fightersRepository;
+            _fighters = fightersRepository.Get();
+            _rules = rules;
         }
 
         public IActionResult Index()
         {
             Contest contest = new Contest()
             {
-                Fighters = _fightersRepository.Get()
+                Fighters = _fighters
             };
             
             return View(contest);
         }
 
-        public IActionResult Privacy()
+        [HttpPost]
+        public IActionResult Contest(Contest contest)
         {
-            return View();
+            contest.Fighters = _fighters;
+
+            string startValidation = _rules.StartValidation(contest.Fighters, contest.CheckBoxFighters);
+
+            if (!string.IsNullOrEmpty(startValidation))
+            {
+                contest.ErrorMessage = startValidation;
+            }
+
+            return View("Index", contest);
         }
 
         public IActionResult Error()
