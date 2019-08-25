@@ -30,15 +30,34 @@ namespace FightsContest.Domain.Service.Contest
 
         public List<Fighter> Contest(List<Fighter> fighters, List<int> checkedFighters)
         {
-            IEnumerable<List<Fighter>> groups = Groups(fighters, checkedFighters);
-
+            List<List<Fighter>> groups = Groups(fighters, checkedFighters);
+            List<List<Ranking>> rankings = new List<List<Ranking>>();
             foreach (List<Fighter> group in groups)
             {
-                IEnumerable<Ranking> raking = GroupRanking(group);
+                List<Ranking> raking = GroupRanking(group);
+                rankings.Add(raking);
             }
+
+            var teste =  QuarterFinals(fighters, rankings);
 
             return new List<Fighter>();
         }
+
+        public List<List<Fighter>> QuarterFinals(List<Fighter> fighters, List<List<Ranking>> rankings)
+        {
+            List<List<Fighter>> quarter = new List<List<Fighter>>();
+            foreach (List<Ranking> ranking in rankings)
+            {
+                quarter.Add(new List<Fighter>()
+                {
+                    fighters.FirstOrDefault(i => i.Id == ranking[0].Id),
+                    fighters.FirstOrDefault(i => i.Id == ranking[1].Id),
+                });
+
+            }
+            return quarter;
+        }
+        
 
         public Fight Winner(Fighter fighter, Fighter challenger)
         {
@@ -75,11 +94,11 @@ namespace FightsContest.Domain.Service.Contest
             return fight;
         }
 
-        public IEnumerable<List<Fighter>> Groups(List<Fighter> fighters, List<int> checkedFighters)
+        public List<List<Fighter>> Groups(List<Fighter> fighters, List<int> checkedFighters)
         {
             List<Fighter> filtredFighters = fighters.Where(i => checkedFighters.Contains(i.Id)).OrderBy(i => i.Age).ToList();
 
-            IEnumerable<List<Fighter>> groups = new List<List<Fighter>>()
+            List<List<Fighter>> groups = new List<List<Fighter>>()
             {
                 filtredFighters.Take(5).ToList(),
                 filtredFighters.Skip(5).Take(5).ToList(),
@@ -90,24 +109,26 @@ namespace FightsContest.Domain.Service.Contest
             return groups;
         }
 
-        public IEnumerable<Ranking> GroupRanking(List<Fighter> fighters)
+        public List<Ranking> GroupRanking(List<Fighter> fighters)
         {
-            IEnumerable<Ranking> ranking = fighters.Select(i => new Ranking() { Id = i.Id, Name = i.Name, Fights = 0, Wins = 0, Loses = 0 });
-
+            List<Ranking> ranking = fighters.Select(i => new Ranking() { Id = i.Id, Name = i.Name, Fights = 0, Wins = 0, Loses = 0 }).ToList();
+            int indexChallenger = 1;
+            int indexOut = 1;
             foreach (Fighter fighter in fighters)
             {
-                foreach (Fighter challenger in fighters)
+                indexChallenger = indexOut;
+                while (indexChallenger <= 4)
                 {
-                    if (fighter.Id != challenger.Id)
-                    {
-                        Fight fight = Winner(fighter, challenger);
-                        ranking.Where(i => i.Id == fight.Winner).Select(i => { i.Wins = i.Wins++; i.Fights++; return i; });
-                        ranking.Where(i => i.Id == fight.Loser).Select(i => { i.Wins = i.Loses++; i.Fights++; return i; });
-                    }
+                    Fighter challenger = fighters[indexChallenger];
+                    Fight fight = Winner(fighter, challenger);
+                    ranking.Where(i => i.Id == fight.Winner).Select(i => { i.Wins += +1; i.Fights += 1; return i; }).ToList();
+                    ranking.Where(i => i.Id == fight.Loser).Select(i => { i.Loses += 1; i.Fights += 1; return i; }).ToList();
+                    indexChallenger++;
                 }
+                indexOut++;
             }
 
-            return ranking;
+            return ranking.OrderByDescending(i => i.Wins).ToList();
         }
 
         private int WinRate(Fighter fighter)
