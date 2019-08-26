@@ -9,8 +9,6 @@ namespace FightsContest.Domain.Service.Contest
 {
     public class RulesContest : IRulesContest
     {
-        private const int NUMBEROFFIGHTERS = 20;
-
         public List<Fighter> Contest(List<Fighter> fighters, List<int> checkedFighters)
         {
             List<List<Fighter>> groups = Groups(fighters, checkedFighters);
@@ -41,7 +39,6 @@ namespace FightsContest.Domain.Service.Contest
             return quarter;
         }
         
-
         public Fight Winner(Fighter fighter, Fighter challenger)
         {
             Fight fight = new Fight()

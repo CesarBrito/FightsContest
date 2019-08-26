@@ -1,0 +1,182 @@
+[
+  {
+    "id": 37,
+    "nome": "Muhammad Ali",
+    "idade": 74,
+    "artesMarciais": [ "Boxe" ],
+    "lutas": 61,
+    "derrotas": 5,
+    "vitorias": 56
+  },
+  {
+    "id": 36,
+    "nome": "Chuck Liddell",
+    "idade": 49,
+    "artesMarciais": [ "Wrestling", "Kempo", "Kickboxing" ],
+    "lutas": 30,
+    "derrotas": 9,
+    "vitorias": 21
+  },
+  {
+    "id": 35,
+    "nome": "Sugar Ray Robinson",
+    "idade": 67,
+    "artesMarciais": [ "Boxe" ],
+    "lutas": 200,
+    "derrotas": 19,
+    "vitorias": 173
+  },
+  {
+    "id": 34,
+    "nome": "Anderson Silva",
+    "idade": 43,
+    "artesMarciais": [ "Boxe", "Muay Thai", "Jiu-Jitsu", "Taekwondo", "Capoeira" ],
+    "lutas": 44,
+    "derrotas": 9,
+    "vitorias": 34
+  },
+  {
+    "id": 33,
+    "nome": "George Foreman",
+    "idade": 70,
+    "artesMarciais": [ "Boxe" ],
+    "lutas": 81,
+    "derrotas": 5,
+    "vitorias": 76
+  },
+  {
+    "id": 32,
+    "nome": "Sugar Ray Leonard",
+    "idade": 62,
+    "artesMarciais": [ "Boxe" ],
+    "lutas": 40,
+    "derrotas": 3,
+    "vitorias": 36
+  },
+  {
+    "id": 31,
+    "nome": "Jon Jones",
+    "idade": 31,
+    "artesMarciais": [ "Wrestling", "Jiu-Jitsu" ],
+    "lutas": 25,
+    "derrotas": 1,
+    "vitorias": 23
+  },
+  {
+    "id": 30,
+    "nome": "Rocky Marciano",
+    "idade": 45,
+    "artesMarciais": [ "Boxe" ],
+    "lutas": 49,
+    "derrotas": 0,
+    "vitorias": 49
+  },
+  {
+    "id": 29,
+    "nome": "Vitor Belfort",
+    "idade": 41,
+    "artesMarciais": [ "Boxe", "Jiu-Jitsu", "Muay Thai", "Judô" ],
+    "lutas": 40,
+    "derrotas": 14,
+    "vitorias": 26
+  },
+  {
+    "id": 28,
+    "nome": "Floyd MayweatherJr.",
+    "idade": 41,
+    "artesMarciais": [ "Boxe" ],
+    "lutas": 50,
+    "derrotas": 0,
+    "vitorias": 50
+  },
+  {
+    "id": 27,
+    "nome": "Lyoto Machida",
+    "idade": 40,
+    "artesMarciais": [ "Karatê", "Shotokan", "Jiu-Jitsu", "Capoeira" ],
+    "lutas": 33,
+    "derrotas": 8,
+    "vitorias": 25
+  },
+  {
+    "id": 26,
+    "nome": "Cain Velasquez",
+    "idade": 36,
+    "artesMarciais": [ "Boxe", "Jiu-jítsu", "Kickboxing", "Muay Thai" ],
+    "lutas": 17,
+    "derrotas": 3,
+    "vitorias": 14
+  },
+  {
+    "id": 25,
+    "nome": "Cigano",
+    "idade": 35,
+    "artesMarciais": [ "Boxe", "Jiu-jítsu" ],
+    "lutas": 25,
+    "derrotas": 5,
+    "vitorias": 20
+  },
+  {
+    "id": 24,
+    "nome": "Jacaré",
+    "idade": 39,
+    "artesMarciais": [ "Jiu-jítsu" ],
+    "lutas": 32,
+    "derrotas": 6,
+    "vitorias": 26
+  },
+  {
+    "id": 23,
+    "nome": "Chael Sonnen",
+    "idade": 41,
+    "artesMarciais": [ "Greco-romana" ],
+    "lutas": 47,
+    "derrotas": 16,
+    "vitorias": 30
+  },
+  {
+    "id": 22,
+    "nome": "George Saint Pierre",
+    "idade": 37,
+    "artesMarciais": [ "Boxe", "Jiu-jítsu", "Kyokushin", "Muay thai", "Jiu-jitsu" ],
+    "lutas": 28,
+    "derrotas": 2,
+    "vitorias": 26
+  },
+  {
+    "id": 21,
+    "nome": "Matt Hughes",
+    "idade": 45,
+    "artesMarciais": [ "Artes marciais mistas" ],
+    "lutas": 54,
+    "derrotas": 9,
+    "vitorias": 45
+  },
+  {
+    "id": 20,
+    "nome": "Demetrious Johnson",
+    "idade": 32,
+    "artesMarciais": [ "Olímpica estilo livre" ],
+    "lutas": 31,
+    "derrotas": 3,
+    "vitorias": 27
+  },
+  {
+    "id": 19,
+    "nome": "Evander Holyfield",
+    "idade": 56,
+    "artesMarciais": [ "Boxe" ],
+    "lutas": 57,
+    "derrotas": 10,
+    "vitorias": 44
+  },
+  {
+    "id": 18,
+    "nome": "Mike Tyson",
+    "idade": 52,
+    "artesMarciais": [ "Boxe" ],
+    "lutas": 58,
+    "derrotas": 6,
+    "vitorias": 50
+  }
+]
