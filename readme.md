@@ -5,8 +5,8 @@ Clonar [repositório](https://github.com/CesarBrito/FightsContest) para maquina 
 ## Instalação
 Caso não tenha o Dot.Net 2.2 instalado, instalar a partir do seguinte [link](https://dotnet.microsoft.com/download/dotnet-core/2.2).
 
-##Build
-###Após o clone e a instalação caso necessário.
+## Build
+### Após o clone e a instalação caso necessário.
 Executar o batch clean seguindo os seguintes passos:
 1. Clicar com o botão direito na solution.
 2. Batch Build...
