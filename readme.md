@@ -25,5 +25,8 @@ Após essa execução é esperado que todos os testes fiquem com o icone verde d
 
 ## Executando a aplicação
 ### Após a execução dos teste, executar a aplicação seguindo os seguintes passos.
-1. Caso o projeto "FightsContest.Application" não estiver se
+1. Caso o projeto "FightsContest.Application" não estiver selecionado.
+	1. Clicar com o botão direito no projeto "FightsContest.Application".
+	2. Clicar no item: Set as StartUp Project()
+
 
