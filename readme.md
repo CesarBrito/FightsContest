@@ -31,10 +31,10 @@ Após essa execução é esperado que todos os testes fiquem com o icone verde d
 #### Após a verificação, seguir os seguites passos:
 1. Precionar a teclar F5 ou clicar em Start(Iniciar) no menu superior.
 2. Após o navegador abrir com a aplicação, selecionar 20 lutadores de sua preferência.
-	1. O torneio só se seguirá caso seja selecionado 20 lutadores válidos.
+	1. O torneio só seguirá caso seja selecionado 20 lutadores válidos.
 3. Clicar no botão Iniciar.
 
-**O sistema apresentará o vencedor, segundo e terceiro lugar**
+**O sistema apresentará o vencedor, segundo e terceiro lugar.**
 
 #Sobre o projeto
 
