@@ -36,6 +36,6 @@ Após essa execução é esperado que todos os testes fiquem com o icone verde d
 
 **O sistema apresentará o vencedor, segundo e terceiro lugar.**
 
-#Sobre o projeto
+# Sobre o projeto
 
 
