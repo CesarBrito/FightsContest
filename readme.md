@@ -41,7 +41,7 @@ Após essa execução é esperado que todos os testes fiquem com o icone verde d
 Tentei implementar uma aquitetura simples utilizando DDD e TDD, utilizando inversão de dependência e segregação de interface.
 Dividimos nossa aplicação de 3 camadas principais: Application, Domain, Infrastucture.
 ### Application
-Tem como finalidade fazer a intermidiação entre o usuário e o sistema.
+Tem como finalidade fazer a intermediação entre o usuário e o sistema.
 ### Infrastucture
 Tem como finalidade manter os repositório, serviços de Cross Cutting, e Anti Corruption.
 ### Domain	
