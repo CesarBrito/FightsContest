@@ -23,7 +23,7 @@ Caso não tenha o Dot.Net 2.2 instalado, instalar a partir do seguinte [link](ht
 
 Após essa execução é esperado que todos os testes fiquem com o icone verde de sucesso.
 
-##Executando a aplicação
+## Executando a aplicação
 ### Após a execução dos teste, executar a aplicação seguindo os seguintes passos.
 1. Caso o projeto "FightsContest.Application" não estiver se
 
