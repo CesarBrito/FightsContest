@@ -4,7 +4,7 @@ using System.IO;
 using System.Reflection;
 using System.Text;
 
-namespace FightsContest.Test
+namespace FightsContest.Test.Utils
 {
     public static class Resources
     {

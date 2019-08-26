@@ -12,7 +12,9 @@ namespace FightsContest.Domain.Service.Contest
         public List<Fighter> Contest(List<Fighter> fighters, List<int> checkedFighters)
         {
             List<List<Fighter>> groups = Groups(fighters, checkedFighters);
+
             List<List<Ranking>> rankings = new List<List<Ranking>>();
+
             foreach (List<Fighter> group in groups)
             {
                 List<Ranking> raking = GroupRanking(group);
