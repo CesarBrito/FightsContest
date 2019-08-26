@@ -7,8 +7,6 @@ namespace FightsContest.Domain.Interfaces.Contest
 {
     public interface IRulesContest
     {
-        string StartValidation(List<Fighter> fighters, List<int> checkedFighters);
-
         List<Fighter> Contest(List<Fighter> fighters, List<int> checkedFighters);
 
         List<List<Fighter>> QuarterFinals(List<Fighter> fighters, List<List<Ranking>> rankings);

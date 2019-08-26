@@ -1,6 +1,7 @@
 ﻿using FightsContest.Domain.Entities.Model;
 using FightsContest.Domain.Interfaces.Contest;
 using FightsContest.Domain.Interfaces.Repository;
+using FightsContest.Domain.Interfaces.Utils;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 
@@ -10,11 +11,14 @@ namespace FightsContest.Application.Controllers
     {
         private readonly List<Fighter> _fighters;
         private readonly IRulesContest _rules;
+        private readonly IValidation _validation;
 
-        public HomeController(IFightersRepository fightersRepository, IRulesContest rules)
+        public HomeController(IFightersRepository fightersRepository, IRulesContest rules, IValidation validation)
         {
             _fighters = fightersRepository.Get();
+            _validation = validation;
             _rules = rules;
+            
         }
 
         public IActionResult Index()
@@ -32,7 +36,7 @@ namespace FightsContest.Application.Controllers
         {
             contest.Fighters = _fighters;
 
-            string startValidation = _rules.StartValidation(contest.Fighters, contest.CheckBoxFighters);
+            string startValidation = _validation.StartValidation(contest.Fighters, contest.CheckBoxFighters);
 
             if (!string.IsNullOrEmpty(startValidation))
             {
