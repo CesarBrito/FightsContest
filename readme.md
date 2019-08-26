@@ -37,5 +37,14 @@ Após essa execução é esperado que todos os testes fiquem com o icone verde d
 **O sistema apresentará o vencedor, segundo e terceiro lugar.**
 
 # Sobre o projeto
+## Arquitetura
+Tentei implementar uma aquitetura simples utilizando DDD e TDD, utilizando inversão de dependência e segregação de interface.
+Dividimos nossa aplicação de 3 camadas principais: Application, Domain, Infrastucture.
+### Application
+Tem como finalidade fazer a intermidiação entre o usuário e o sistema.
+### Infrastucture
+Tem como finalidade manter os repositório, serviços de Cross Cutting, e Anti Corruption.
+### Domain	
+Essa camada pode ser considerada o core da aplicação, aonde possui todas as classes, interfaces e serviços.
 
 
