@@ -19,7 +19,7 @@ Caso não tenha o Dot.Net 2.2 instalado, instalar a partir do seguinte [link](ht
 1. Clicar no menu Test(Testes).
 2. Clicar na aba Windows.
 3. Clicar em Test Explorer(Gerenciador de Testes).
-4. Na janela que se abrirá, executar os teste com Ctrl+R,A ou clicar na seta de play com a legenda: Execute All(Executar todos).
+4. Na janela que se abrirá, executar os teste com Ctrl+R,A ou clicar na seta de play com a legenda: Run All(Executar todos).
 
 Após essa execução é esperado que todos os testes fiquem com o icone verde de sucesso.
 
