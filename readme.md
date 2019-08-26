@@ -11,7 +11,7 @@ Caso não tenha o Dot.Net 2.2 instalado, instalar a partir do seguinte [link](ht
 1. Clicar com o botão direito na solution.
 2. Batch Build...
 3. Na janela que se abrirá clicar em Select All(Selecionar todos).
-4. Então clicar em Clear(Limpar)
+4. Então clicar em Clear(Limpar).
 5. Repetir o processo até o passo 3.
 6. Então clicar em Build(Construir).
 
