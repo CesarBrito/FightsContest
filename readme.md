@@ -12,7 +12,7 @@ Executar o batch clean seguindo os seguintes passos:
 2. Batch Build...
 3. Na janela que se abrirá clicar em Select All(Selecionar todos).
 4. Então clicar em Clear(Limpar)
-5. Repetir o processo até o passo 4.
+5. Repetir o processo até o passo 3.
 6. Então clicar em Build(Construir).
 
 
