@@ -47,6 +47,6 @@ Tem como finalidade manter os repositório, serviços de Cross Cutting, e Anti C
 ### Domain	
 Essa camada pode ser considerada o core da aplicação, aonde possui todas as classes, interfaces e serviços.
 ## Tests
-A camada de teste tem como finalidade fazer os teste de dominio, e validar regras de negócios para que o fluxo da aplicação aconteça normalmente, caso existe uma modificação em alguma classe core.
+A camada de teste tem como finalidade fazer os teste de dominio, e validar regras de negócios para que o fluxo da aplicação aconteça normalmente, caso exista uma modificação em alguma classe core.
 
 
