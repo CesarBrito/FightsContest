@@ -7,9 +7,18 @@
     <div class="col-12 mb-4">
         <div class="text-center">
             <h1 class="display-4">Torneio de Lutas</h1>
-            <p>
-                Selecione <span>20</span> lutadores para iniciar o torneio.
-            </p>
+            @if (Model.Fighters != null)
+            {
+                <p>
+                    Selecione <span>20</span> lutadores para iniciar o torneio.
+                </p>
+            }
+            else
+            {
+                <h2 class="text-danger">
+                    Não foi possivel buscar as informações dos lutadores.
+                </h2>
+            }
         </div>
     </div>
 
@@ -21,41 +30,43 @@
         @Model.ErrorMessage
     </div>
 }
-
-@using (Html.BeginForm("Contest", "Home", FormMethod.Post))
+@if (Model.Fighters != null)
 {
-    <div class="row">
-        <div class="col-12 mb-3">
-            <button type="submit" class="btn btn-primary">Iniciar</button>
+    using (Html.BeginForm("Contest", "Home", FormMethod.Post))
+    {
+        <div class="row">
+            <div class="col-12 mb-3">
+                <button type="submit" class="btn btn-primary">Iniciar</button>
+            </div>
         </div>
-    </div>
-    <div class="row">
-        @{ int index = 0;}
-        @foreach (Fighter fighter in Model.Fighters)
-        {
-            <div class="col-3 mb-3">
-                <div class="card">
-                    <div class="card-title">
-                        <div class="custom-control custom-checkbox mr-sm-2">
-                            @Html.CheckBox($"CheckBoxFighters[]", fighter.Selected, new { @class = "custom-control-input", id = fighter.Id.ToString(), value = fighter.Id.ToString() })
-                            @Html.Label(fighter.Id.ToString(), fighter.Name, new { @class = "custom-control-label", @for = fighter.Id.ToString() })
+        <div class="row">
+            @{ int index = 0;}
+            @foreach (Fighter fighter in Model.Fighters)
+            {
+                <div class="col-3 mb-3">
+                    <div class="card">
+                        <div class="card-title">
+                            <div class="custom-control custom-checkbox mr-sm-2">
+                                @Html.CheckBox($"CheckBoxFighters[]", fighter.Selected, new { @class = "custom-control-input", id = fighter.Id.ToString(), value = fighter.Id.ToString() })
+                                @Html.Label(fighter.Id.ToString(), fighter.Name, new { @class = "custom-control-label", @for = fighter.Id.ToString() })
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <p><b>Idade:</b> @fighter.Age</p>
+                            <p><b>Lutas:</b> @fighter.Fights</p>
+                            <p><b>Derrotas:</b> @fighter.Loses</p>
+                            <p><b>Vitórias:</b> @fighter.Wins</p>
+                            <p><b>Artes Marciais:</b> @fighter.MartialArts.Count()</p>
                         </div>
                     </div>
-                    <div class="card-body">
-                        <p><b>Idade:</b> @fighter.Age</p>
-                        <p><b>Lutas:</b> @fighter.Fights</p>
-                        <p><b>Derrotas:</b> @fighter.Loses</p>
-                        <p><b>Vitórias:</b> @fighter.Wins</p>
-                        <p><b>Artes Marciais:</b> @fighter.MartialArts.Count()</p>
-                    </div>
                 </div>
-            </div>
-            index++;
-        }
-    </div>
-    <div class="row">
-        <div class="col-12 mb-3">
-            <button type="submit" class="btn btn-primary">Iniciar</button>
+                index++;
+            }
         </div>
-    </div>
+        <div class="row">
+            <div class="col-12 mb-3">
+                <button type="submit" class="btn btn-primary">Iniciar</button>
+            </div>
+        </div>
+    }
 }
