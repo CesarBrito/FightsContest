@@ -1,7 +1,59 @@
-﻿
+﻿@model FightsContest.Domain.Entities.Model.Result
 @{
     ViewData["Title"] = "Contest";
 }
 
-<h1>Contest</h1>
+<div class="row">
+    <div class="col-12 mb-4">
+        <div class="text-center">
+            <h1 class="display-4">Torneio de Lutas</h1>
+            <h2>Vencedores</h2>
+        </div>
+    </div>
+
+</div>
+
+<div class="row mb-3">
+    <div class="col-5 m-auto">
+        <div class="card">
+            <div class="card-title">
+                Campeão
+            </div>
+            <div class="card-body">
+                <strong>@Model.Winner.Name</strong>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mb-3">
+    <div class="col-5 m-auto">
+        <div class="card">
+            <div class="card-title">
+                Segundo
+            </div>
+            <div class="card-body">
+                <strong>@Model.Second.Name</strong>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-5 m-auto">
+        <div class="card">
+            <div class="card-title">
+                Terceiro
+            </div>
+            <div class="card-body">
+                <strong>@Model.Third.Name</strong>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
 

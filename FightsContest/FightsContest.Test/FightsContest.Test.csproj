@@ -8,12 +8,18 @@
 
   <ItemGroup>
     <None Remove="Json\fighters.json" />
+    <None Remove="Json\finals.json" />
     <None Remove="Json\group.json" />
+    <None Remove="Json\quartes.json" />
+    <None Remove="Json\simifinals.json" />
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Include="Json\fighters.json" />
+    <EmbeddedResource Include="Json\finals.json" />
     <EmbeddedResource Include="Json\group.json" />
+    <EmbeddedResource Include="Json\quartes.json" />
+    <EmbeddedResource Include="Json\simifinals.json" />
   </ItemGroup>
 
   <ItemGroup>

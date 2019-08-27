@@ -50,5 +50,24 @@ namespace FightsContest.Test
 
         }
 
+        [TestMethod]
+        public void Matches()
+        {
+            var json = Resources.Get("quartes.json");
+            var json2 = Resources.Get("fighters.json");
+
+            List<List<Fighter>> quartes = JsonConvert.DeserializeObject<List<List<Fighter>>>(json);
+            List<Fighter> fighters = JsonConvert.DeserializeObject<List<Fighter>>(json2);
+
+            List<Fighter> semifinalists = _ruleContest.QuarterFinalsMatches(quartes, fighters);
+
+            Assert.AreEqual(semifinalists.Count(), 4);
+            Assert.AreEqual(semifinalists[0].Id, 37);
+            Assert.AreEqual(semifinalists[1].Id, 35);
+            Assert.AreEqual(semifinalists[2].Id, 30);
+            Assert.AreEqual(semifinalists[3].Id, 37);
+
+        }
+
     }
 }

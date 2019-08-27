@@ -49,4 +49,9 @@ Essa camada pode ser considerada o core da aplicação, aonde possui todas as cl
 ## Tests
 A camada de teste tem como finalidade fazer os teste de dominio, e validar regras de negócios para que o fluxo da aplicação aconteça normalmente, caso exista uma modificação em alguma classe core.
 
+# O que pode melhorar
+Acredito que a classe(RulesContest) e a interface(IRulesContest) principal podem ser melhoradas, segmentando em mais classes e interfaces, trazendo assim um melhor legibilidade das regras.\
+As regras estão engessadas acredito que pode ser melhorada.
+
+
 

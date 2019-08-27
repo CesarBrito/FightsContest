@@ -1,0 +1,82 @@
+[
+  [
+    {
+      "id": 37,
+      "nome": "Muhammad Ali",
+      "idade": 74,
+      "artesMarciais": [ "Boxe" ],
+      "lutas": 61,
+      "derrotas": 5,
+      "vitorias": 56
+    },
+    {
+      "id": 36,
+      "nome": "Chuck Liddell",
+      "idade": 49,
+      "artesMarciais": [ "Wrestling", "Kempo", "Kickboxing" ],
+      "lutas": 30,
+      "derrotas": 9,
+      "vitorias": 21
+    }
+  ],
+  [
+    {
+      "id": 35,
+      "nome": "Sugar Ray Robinson",
+      "idade": 67,
+      "artesMarciais": [ "Boxe" ],
+      "lutas": 200,
+      "derrotas": 19,
+      "vitorias": 173
+    },
+    {
+      "id": 34,
+      "nome": "Anderson Silva",
+      "idade": 43,
+      "artesMarciais": [ "Boxe", "Muay Thai", "Jiu-Jitsu", "Taekwondo", "Capoeira" ],
+      "lutas": 44,
+      "derrotas": 9,
+      "vitorias": 34
+    }
+  ],
+  [
+    {
+      "id": 33,
+      "nome": "George Foreman",
+      "idade": 70,
+      "artesMarciais": [ "Boxe" ],
+      "lutas": 81,
+      "derrotas": 5,
+      "vitorias": 76
+    },
+    {
+      "id": 32,
+      "nome": "Sugar Ray Leonard",
+      "idade": 62,
+      "artesMarciais": [ "Boxe" ],
+      "lutas": 40,
+      "derrotas": 3,
+      "vitorias": 36
+    }
+  ],
+  [
+    {
+      "id": 31,
+      "nome": "Jon Jones",
+      "idade": 31,
+      "artesMarciais": [ "Wrestling", "Jiu-Jitsu" ],
+      "lutas": 25,
+      "derrotas": 1,
+      "vitorias": 23
+    },
+    {
+      "id": 30,
+      "nome": "Rocky Marciano",
+      "idade": 45,
+      "artesMarciais": [ "Boxe" ],
+      "lutas": 49,
+      "derrotas": 0,
+      "vitorias": 49
+    }
+  ]
+]

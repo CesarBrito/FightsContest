@@ -44,8 +44,8 @@ namespace FightsContest.Application.Controllers
             }
             else
             {
-                List<Fighter> winners = _rules.Contest(contest.Fighters, contest.CheckBoxFighters);
-
+                Result winners = _rules.Contest(contest.Fighters, contest.CheckBoxFighters);
+                return View("Contest", winners);
             }
 
             return View("Index", contest);

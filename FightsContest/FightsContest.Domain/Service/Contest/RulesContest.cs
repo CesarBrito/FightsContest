@@ -9,7 +9,7 @@ namespace FightsContest.Domain.Service.Contest
 {
     public class RulesContest : IRulesContest
     {
-        public List<Fighter> Contest(List<Fighter> fighters, List<int> checkedFighters)
+        public Result Contest(List<Fighter> fighters, List<int> checkedFighters)
         {
             List<List<Fighter>> groups = Groups(fighters, checkedFighters);
 
@@ -21,9 +21,15 @@ namespace FightsContest.Domain.Service.Contest
                 rankings.Add(raking);
             }
 
-            var teste =  QuarterFinals(fighters, rankings);
+            List<List<Fighter>> quarters = QuarterFinals(fighters, rankings);
 
-            return new List<Fighter>();
+            List<Fighter> semifinalists = QuarterFinalsMatches(quarters, fighters);
+
+            List<List<Fighter>> finalits = Semifinals(semifinalists, fighters);
+
+            Result result = Finals(finalits, fighters);
+
+            return result;
         }
 
         public List<List<Fighter>> QuarterFinals(List<Fighter> fighters, List<List<Ranking>> rankings)
@@ -40,7 +46,66 @@ namespace FightsContest.Domain.Service.Contest
             }
             return quarter;
         }
-        
+
+        public List<Fighter> QuarterFinalsMatches(List<List<Fighter>> quartes, List<Fighter> fighters)
+        {
+            List<Fighter> result = new List<Fighter>();
+
+            Fight A1B2 = Winner(quartes[0][0], quartes[1][1]);
+            Fight A2B1 = Winner(quartes[0][1], quartes[1][0]);
+            Fight C1D2 = Winner(quartes[2][0], quartes[3][1]);
+            Fight C2D1 = Winner(quartes[2][1], quartes[0][0]);
+
+            result.Add(fighters.FirstOrDefault(i => i.Id == A1B2.Winner));
+            result.Add(fighters.FirstOrDefault(i => i.Id == A2B1.Winner));
+            result.Add(fighters.FirstOrDefault(i => i.Id == C1D2.Winner));
+            result.Add(fighters.FirstOrDefault(i => i.Id == C2D1.Winner));
+
+            return result;
+
+        }
+
+        public List<List<Fighter>> Semifinals(List<Fighter> semifinals, List<Fighter> fighters)
+        {
+            Fight SemifinalOne = Winner(semifinals[0], semifinals[1]);
+            Fight SemifinalTwo = Winner(semifinals[2], semifinals[3]);
+
+            List<List<Fighter>> finals = new List<List<Fighter>>();
+
+            List<Fighter> final = new List<Fighter>()
+            {
+                fighters.FirstOrDefault(i => i.Id == SemifinalOne.Winner),
+                fighters.FirstOrDefault(i => i.Id == SemifinalTwo.Winner)
+            };
+
+            List<Fighter> thirdPlace = new List<Fighter>()
+            {
+                fighters.FirstOrDefault(i => i.Id == SemifinalOne.Loser),
+                fighters.FirstOrDefault(i => i.Id == SemifinalTwo.Loser)
+            };
+
+            finals.Add(final);
+            finals.Add(thirdPlace);
+
+            return finals;
+
+        }
+
+        public Result Finals(List<List<Fighter>> finals, List<Fighter> fighters)
+        {
+            Fight final = Winner(finals[0][0], finals[0][1]);
+            Fight third = Winner(finals[1][0], finals[1][1]);
+
+            Result result = new Result()
+            {
+                Winner = fighters.FirstOrDefault(i => i.Id == final.Winner),
+                Second = fighters.FirstOrDefault(i => i.Id == final.Loser),
+                Third = fighters.FirstOrDefault(i => i.Id == third.Winner)
+            };
+
+            return result;
+        }
+
         public Fight Winner(Fighter fighter, Fighter challenger)
         {
             Fight fight = new Fight()
