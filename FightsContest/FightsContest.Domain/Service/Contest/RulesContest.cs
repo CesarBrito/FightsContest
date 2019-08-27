@@ -168,7 +168,7 @@ namespace FightsContest.Domain.Service.Contest
                 {
                     Fighter challenger = fighters[indexChallenger];
                     Fight fight = Winner(fighter, challenger);
-                    ranking.Where(i => i.Id == fight.Winner).Select(i => { i.Wins += +1; i.Fights += 1; return i; }).ToList();
+                    ranking.Where(i => i.Id == fight.Winner).Select(i => { i.Wins += 1; i.Fights += 1; return i; }).ToList();
                     ranking.Where(i => i.Id == fight.Loser).Select(i => { i.Loses += 1; i.Fights += 1; return i; }).ToList();
                     indexChallenger++;
                 }
