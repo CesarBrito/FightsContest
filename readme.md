@@ -38,7 +38,7 @@ Após essa execução é esperado que todos os testes fiquem com o icone verde d
 
 # Sobre o projeto
 ## Arquitetura
-Tentei implementar uma aquitetura simples utilizando DDD e TDD, utilizando inversão de dependência e segregação de interface.
+Tentei implementar uma aquitetura simples utilizando DDD e TDD, utilizando inversão de dependência e segregação de interface.\
 Dividimos nossa aplicação de 3 camadas principais: Application, Domain, Infrastucture.
 ### Application
 Tem como finalidade fazer a intermediação entre o usuário e o sistema.
@@ -51,7 +51,7 @@ A camada de teste tem como finalidade fazer os teste de dominio, e validar regra
 
 # O que pode melhorar
 Acredito que a classe(RulesContest) e a interface(IRulesContest) principal podem ser melhoradas, segmentando em mais classes e interfaces, trazendo assim um melhor legibilidade das regras.\
-As regras estão engessadas acredito que pode ser melhorada.
+As regras estão engessadas acredito que podem ser melhoradas.
 
 
 
